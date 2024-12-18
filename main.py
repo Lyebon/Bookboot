@@ -20,13 +20,18 @@ def get_book_text(path):
 def count_chars(text):
     lower_words = text.lower()
     char_count = { }
+    char_list = []
     alphabet = string.ascii_lowercase
     for char in lower_words:
         if char in alphabet:
             char_count[char] = char_count.get(char, 0) + 1
-    
-    return char_count
 
+    for leter in char_count:
+        dato = {}
+        dato[leter] = char_count.get(leter, 0) +1
+        char_list.append(dato)
+
+    return char_list
 
 def num_words(text):
     words = text.split()
