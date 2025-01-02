@@ -10,12 +10,10 @@ def main():
     words = num_words(text)
     leters = count_chars(text)
     return show_mesages(book_path, words, leters)
-    
 
 def get_book_text(path):
     with open(path) as f:
         return f.read()
-
 
 def count_chars(text):
     lower_words = text.lower()
@@ -31,19 +29,20 @@ def count_chars(text):
         dato[leter] = char_count.get(leter, 0) +1
         char_list.append(dato)
 
+    char_list.sort(reverse=True, key=sort_on)
     return char_list
+
+def sort_on(dict):
+    return dict["num"]
 
 def num_words(text):
     words = text.split()
     return len (words)
-
 
 def show_mesages(book, number, dic):
     print (f"--- Begin report of {book} ---")
     print (f"{number} words found in the document\n")
     print (f"The {dic} character was found {dic} times")
     print ("--- End report ---")
-
-
 
 main()
