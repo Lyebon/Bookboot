@@ -26,10 +26,12 @@ def count_chars(text):
 
     for leter in char_count:
         dato = {}
-        dato[leter] = char_count.get(leter, 0) +1
+        dato["leter"] = leter
+        dato["num"] = char_count.get(leter, 0)
         char_list.append(dato)
 
-    char_list.sort(reverse=True, key=sort_on)
+    char_list.sort(reverse = True, key=sort_on)
+
     return char_list
 
 def sort_on(dict):
@@ -42,7 +44,7 @@ def num_words(text):
 def show_mesages(book, number, dic):
     print (f"--- Begin report of {book} ---")
     print (f"{number} words found in the document\n")
-    print (f"The {dic} character was found {dic} times")
+    print (dic)
     print ("--- End report ---")
 
 main()
