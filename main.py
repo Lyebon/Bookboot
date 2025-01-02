@@ -44,7 +44,8 @@ def num_words(text):
 def show_mesages(book, number, dic):
     print (f"--- Begin report of {book} ---")
     print (f"{number} words found in the document\n")
-    print (dic)
+    for item in dic:
+        print(f"The {item["leter"]} character was found {item["num"]} times")
     print ("--- End report ---")
 
 main()
